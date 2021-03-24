@@ -35,6 +35,13 @@
   },
   "source": "_src",
   "destination": "/",
+  "image-processing": {
+    "maxWidth": 1080,
+    "minWidth": 300,
+    "resize": [1, 0.75, 0.5, 0.3],
+    "renamePostfix": ["_l", "_m", "_s", "_xs"],
+    "format": ["avif", "webp", "jpg"]
+  },
   "clean": false,
   "devClean": false,
   "plugins": [
@@ -43,7 +50,7 @@
       "metalsmith-publish": { "draft": false, "private": false },
       "dev": false
     },
-    { "metalsmith-debug": {"log": "hello ms debug!"} },
+    { "metalsmith-responsive-images": true },
     {
       "metalsmith-collections": {
         "posts": {
